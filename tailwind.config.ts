@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,19 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				royal: {
+					50: '#f4f3ff',
+					100: '#ebe9fe',
+					200: '#d9d6fe',
+					300: '#beb5fd',
+					400: '#9c89fa',
+					500: '#7c5cf6',
+					600: '#6d3eed',
+					700: '#5d2ed9',
+					800: '#4e26b6',
+					900: '#412094',
+					950: '#271464'
 				}
 			},
 			borderRadius: {
@@ -84,11 +98,62 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'blob': {
+					'0%': {
+						transform: 'translate(0px, 0px) scale(1)'
+					},
+					'33%': {
+						transform: 'translate(30px, -50px) scale(1.1)'
+					},
+					'66%': {
+						transform: 'translate(-20px, 20px) scale(0.9)'
+					},
+					'100%': {
+						transform: 'translate(0px, 0px) scale(1)'
+					}
+				},
+				'blob-reverse': {
+					'0%': {
+						transform: 'translate(0px, 0px) scale(1)'
+					},
+					'33%': {
+						transform: 'translate(-30px, 50px) scale(0.9)'
+					},
+					'66%': {
+						transform: 'translate(20px, -20px) scale(1.1)'
+					},
+					'100%': {
+						transform: 'translate(0px, 0px) scale(1)'
+					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-20px)'
+					}
+				},
+				'glow': {
+					'0%, 100%': {
+						opacity: '0.5'
+					},
+					'50%': {
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'blob': 'blob 7s infinite',
+				'blob-reverse': 'blob-reverse 7s infinite',
+				'float': 'float 6s ease-in-out infinite',
+				'glow': 'glow 2s ease-in-out infinite alternate'
+			},
+			backdropBlur: {
+				xs: '2px',
 			}
 		}
 	},
