@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -142,7 +141,11 @@ export default {
 					'50%': {
 						opacity: '1'
 					}
-				}
+				},
+				scroll: {
+					'0%': { transform: 'translateX(0)' },
+					'100%': { transform: 'translateX(-100%)' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
@@ -150,7 +153,8 @@ export default {
 				'blob': 'blob 7s infinite',
 				'blob-reverse': 'blob-reverse 7s infinite',
 				'float': 'float 6s ease-in-out infinite',
-				'glow': 'glow 2s ease-in-out infinite alternate'
+				'glow': 'glow 2s ease-in-out infinite alternate',
+				scroll: 'scroll 15s linear infinite',
 			},
 			backdropBlur: {
 				xs: '2px',

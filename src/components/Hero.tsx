@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -11,18 +10,29 @@ const Hero = () => {
       <div className="blob-1"></div>
       <div className="blob-2"></div>
       
+      {/* Floating Stats Cards */}
+      <div className="absolute top-32 left-32 glass-card p-6 rounded-2xl backdrop-blur-lg animate-float" style={{ animationDelay: '0.3s' }}>
+        <h3 className="text-2xl font-bold text-white mb-2">5+</h3>
+        <p className="text-white/70">{t('about.experience')}</p>
+      </div>
+
+      <div className="absolute bottom-32 right-32 glass-card p-6 rounded-2xl backdrop-blur-lg animate-float" style={{ animationDelay: '0.5s' }}>
+        <h3 className="text-2xl font-bold text-white mb-2">30+</h3>
+        <p className="text-white/70">{t('about.clients')}</p>
+      </div>
+      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center">
           {/* Greeting */}
           <div className="animate-float">
-            <p className="text-lg md:text-xl text-white/60 mb-4">
+            <p className="text-sm md:text-base text-[#ff880010]/90 mb-4 px-3 border-gradient inline-block">
               {t('hero.greeting')}
             </p>
           </div>
 
           {/* Name */}
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 animate-float" style={{ animationDelay: '0.2s' }}>
-            <span className="gradient-text">Ahmed Benali</span>
+            <span>Boughaba Zakariyae</span>
           </h1>
 
           {/* Title */}
@@ -51,7 +61,7 @@ const Hero = () => {
             
             <a
               href="#contact"
-              className="bg-gradient-to-r from-royal-600 to-royal-500 px-8 py-4 text-white font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-royal-500/25"
+              className="bg-gradient-to-r from-[#ff8800] to-[#ffc233] px-8 py-4 text-white font-semibold rounded-full hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#ff8800]/25"
             >
               {t('hero.contact')}
             </a>
@@ -62,7 +72,7 @@ const Hero = () => {
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-white/50 rounded-full mt-2 animate-pulse"></div>
+          <div className="w-1 h-3 bg-white/50 rounded-full mt-2"></div>
         </div>
       </div>
     </section>

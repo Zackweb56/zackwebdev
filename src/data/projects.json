@@ -1,0 +1,138 @@
+{
+  "projects": [
+    {
+      "title": "projects.project1.title",
+      "description": "projects.project1.description",
+      "image": "/images/projects/prj_01/main_img_prj_01.png",
+      "fullImage": "/images/projects/prj_01/all_website_prj_01.png",
+      "technologies": ["Html5", "Css3", "Bootstrap", "Javascript"],
+      "link": "https://zackweb56.github.io/cabinet_dentaire_01/",
+      "longDescription": "projects.project1.longDescription",
+      "category": "Landing Page"
+    },
+    {
+      "title": "projects.project2.title",
+      "description": "projects.project2.description",
+      "image": "/images/projects/prj_02/main_img_prj_02.png",
+      "fullImage": "/images/projects/prj_02/all_website_prj_02.png",
+      "technologies": ["React", "Shadcn ui", "TailwindCss"],
+      "link": "https://zackweb56.github.io/architect_portfolio/",
+      "longDescription": "projects.project2.longDescription",
+      "category": "Landing Page"
+    },
+    {
+      "title": "projects.project10.title",
+      "description": "projects.project10.description",
+      "image": "/images/projects/prj_10/main_img_prj_10.png",
+      "fullImage": "/images/projects/prj_10/all_website_prj_10.png",
+      "technologies": ["Next.js", "Stripe", "MongoDB", "Tailwind"],
+      "link": null,
+      "longDescription": "projects.project10.longDescription",
+      "category": "Landing Page"
+    },
+    {
+      "title": "projects.project4.title",
+      "description": "projects.project4.description",
+      "image": "/images/projects/prj_04/main_img_prj_04.png",
+      "fullImage": "/images/projects/prj_04/all_website_prj_04.png",
+      "technologies": ["Wordpress"],
+      "link": null,
+      "longDescription": "projects.project4.longDescription",
+      "category": "Landing Page"
+    },
+    {
+      "title": "projects.project5.title",
+      "description": "projects.project5.description",
+      "image": "/images/projects/prj_05/main_img_prj_05.png",
+      "fullImage": "/images/projects/prj_05/all_website_prj_05.png",
+      "technologies": ["React", "D3.js", "FastAPI", "Docker"],
+      "link": null,
+      "longDescription": "projects.project5.longDescription",
+      "category": "Landing Page"
+    },
+    {
+      "title": "projects.project6.title",
+      "description": "projects.project6.description",
+      "image": "/images/projects/prj_06/main_img_prj_06.png",
+      "fullImage": "/images/projects/prj_06/all_website_prj_06.png",
+      "technologies": ["React", "Tailwind", "Stripe", "Firebase"],
+      "link": null,
+      "longDescription": "projects.project6.longDescription",
+      "category": "Landing Page"
+    },
+    {
+      "title": "projects.project7.title",
+      "description": "projects.project7.description",
+      "image": "/images/projects/prj_07/main_img_prj_07.png",
+      "fullImage": "/images/projects/prj_07/all_website_prj_07.png",
+      "technologies": ["Next.js", "Shopify", "Tailwind", "Stripe"],
+      "link": null,
+      "longDescription": "projects.project7.longDescription",
+      "category": "Landing Page"
+    },
+    {
+      "title": "projects.project8.title",
+      "description": "projects.project8.description",
+      "image": "/images/projects/prj_08/main_img_prj_08.png",
+      "fullImage": "/images/projects/prj_08/all_website_prj_08.png",
+      "technologies": ["React", "Tailwind", "Framer Motion", "Netlify"],
+      "link": null,
+      "longDescription": "projects.project8.longDescription",
+      "category": "Landing Page"
+    },
+    {
+      "title": "projects.project9.title",
+      "description": "projects.project9.description",
+      "image": "/images/projects/prj_09/main_img_prj_09.png",
+      "fullImage": "/images/projects/prj_09/all_website_prj_09.png",
+      "technologies": ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+      "link": null,
+      "longDescription": "projects.project9.longDescription",
+      "category": "Landing Page"
+    },
+    {
+      "title": "projects.project3.title",
+      "description": "projects.project3.description",
+      "image": "/images/projects/prj_03/main_img_prj_03.png",
+      "fullImage": "/images/projects/prj_03/all_website_prj_03.png",
+      "technologies": ["Wordpress"],
+      "link": null,
+      "longDescription": "projects.project3.longDescription",
+      "category": "Landing Page"
+    },
+    {
+      "title": "projects.project14.title",
+      "description": "projects.project14.description",
+      "image": "/images/projects/prj_14/main_img_prj_14.png",
+      "fullImage": "/images/projects/prj_14/all_website_prj_14.png",
+      "technologies": ["Html5", "Css3", "Bootstrap", "Javascript"],
+      "link": "#",
+      "longDescription": "projects.project14.longDescription",
+      "category": "Landing Page"
+    },
+    {
+      "title": "projects.project11.title",
+      "description": "projects.project11.description",
+      "technologies": ["Laravel", "Ajax", "Jquery", "Mysql", "UML", "Bootstrap", "Css3"],
+      "link": null,
+      "longDescription": "projects.project11.longDescription",
+      "category": "Web App"
+    },
+    {
+      "title": "projects.project12.title",
+      "description": "projects.project12.description",
+      "technologies": ["Laravel", "Mysql", "Axios", "React", "Shadcn ui"],
+      "link": null,
+      "longDescription": "projects.project12.longDescription",
+      "category": "Web App"
+    },
+    {
+      "title": "projects.project13.title",
+      "description": "projects.project13.description",
+      "technologies": ["Laravel", "Livewire", "Ajax", "Jquery", "Mysql", "UML", "Tailwind", "Flux", "Alpine.js"],
+      "link": null,
+      "longDescription": "projects.project13.longDescription",
+      "category": "Web App"
+    }
+  ]
+} 

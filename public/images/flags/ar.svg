@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Red background -->
+  <rect width="24" height="24" fill="#C1272D"/>
+  
+  <!-- Green pentagram (star) -->
+  <path d="M12 7L13.53 10.36L17 10.86L14.5 13.33L15.06 16.82L12 15.2L8.94 16.82L9.5 13.33L7 10.86L10.47 10.36L12 7Z" fill="#006C35"/>
+</svg>
