@@ -25,8 +25,8 @@
       "description": "projects.project10.description",
       "image": "/images/projects/prj_10/main_img_prj_10.png",
       "fullImage": "/images/projects/prj_10/all_website_prj_10.png",
-      "technologies": ["Next.js", "Stripe", "MongoDB", "Tailwind"],
-      "link": null,
+      "technologies": ["Html5", "Css3", "Bootstrap", "Javascript"],
+      "link": "https://zackweb56.github.io/car_rent_design_bm/",
       "longDescription": "projects.project10.longDescription",
       "category": "Landing Page"
     },
@@ -41,13 +41,13 @@
       "category": "Landing Page"
     },
     {
-      "title": "projects.project5.title",
-      "description": "projects.project5.description",
-      "image": "/images/projects/prj_05/main_img_prj_05.png",
-      "fullImage": "/images/projects/prj_05/all_website_prj_05.png",
-      "technologies": ["React", "D3.js", "FastAPI", "Docker"],
-      "link": null,
-      "longDescription": "projects.project5.longDescription",
+      "title": "projects.project15.title",
+      "description": "projects.project15.description",
+      "image": "/images/projects/prj_15/main_img_prj_15.png",
+      "fullImage": "/images/projects/prj_15/all_website_prj_15.png",
+      "technologies": ["Wordpress"],
+      "link": "https://www.3findustrie.com/",
+      "longDescription": "projects.project15.longDescription",
       "category": "Landing Page"
     },
     {
@@ -58,6 +58,16 @@
       "technologies": ["React", "Tailwind", "Stripe", "Firebase"],
       "link": null,
       "longDescription": "projects.project6.longDescription",
+      "category": "Landing Page"
+    },
+    {
+      "title": "projects.project5.title",
+      "description": "projects.project5.description",
+      "image": "/images/projects/prj_05/main_img_prj_05.png",
+      "fullImage": "/images/projects/prj_05/all_website_prj_05.png",
+      "technologies": ["React", "D3.js", "FastAPI", "Docker"],
+      "link": null,
+      "longDescription": "projects.project5.longDescription",
       "category": "Landing Page"
     },
     {

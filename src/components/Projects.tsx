@@ -11,24 +11,44 @@ import {
 import { motion } from 'framer-motion';
 import projectsData from '../data/projects.json';
 
+// Image optimization utility
+const getOptimizedImage = (url, width = 800) => {
+  if (!url) return { src: '', lqip: '' };
+  
+  // Example for Cloudinary (modify based on your image host)
+  if (url.includes('cloudinary.com')) {
+    return {
+      src: url.replace('/upload/', `/upload/w_${width},q_auto,f_auto/`),
+      lqip: url.replace('/upload/', '/upload/w_20,q_1,f_auto/')
+    };
+  }
+  
+  // Fallback - consider adding a proper image CDN
+  return { src: url, lqip: '' };
+};
+
+// Pre-process projects data with optimized images
+const optimizedProjects = projectsData.projects.map(project => ({
+  ...project,
+  imageData: getOptimizedImage(project.image),
+  fullImageData: project.fullImage ? getOptimizedImage(project.fullImage, 1200) : null
+}));
+
 const Projects = () => {
   const { t } = useLanguage();
   const [selectedProject, setSelectedProject] = useState(null);
   const [activeTab, setActiveTab] = useState('All');
   const [projectsToShow, setProjectsToShow] = useState(6);
 
-  const projects = projectsData.projects;
-
   const tabs = [
-    { name: 'All', count: projects.length },
-    { name: 'Landing Page', count: projects.filter(p => p.category === 'Landing Page').length },
-    // { name: 'E-commerce', count: projects.filter(p => p.category === 'E-commerce').length },
-    { name: 'Web App', count: projects.filter(p => p.category === 'Web App').length }
+    { name: 'All', count: optimizedProjects.length },
+    { name: 'Landing Page', count: optimizedProjects.filter(p => p.category === 'Landing Page').length },
+    { name: 'Web App', count: optimizedProjects.filter(p => p.category === 'Web App').length }
   ];
 
   const filteredProjects = activeTab === 'All' 
-    ? projects 
-    : projects.filter(project => project.category === activeTab);
+    ? optimizedProjects 
+    : optimizedProjects.filter(project => project.category === activeTab);
 
   const projectsToDisplay = filteredProjects.slice(0, projectsToShow);
 
@@ -72,6 +92,18 @@ const Projects = () => {
           </div>
         </div>
 
+        {/* Preload first few images for better performance */}
+        {projectsToDisplay.slice(0, 3).map((project, index) => (
+          project.imageData?.src && (
+            <link 
+              key={`preload-${index}`}
+              rel="preload" 
+              as="image" 
+              href={project.imageData.src}
+            />
+          )
+        ))}
+
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projectsToDisplay.map((project, index) => (
@@ -85,12 +117,30 @@ const Projects = () => {
             >
               {/* Project Image */}
               <div className="aspect-[4/3] w-full">
-                {project.image ? (
-                  <img 
-                    src={project.image} 
-                    alt={t(project.title)}
-                    className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
-                  />
+                {project.imageData?.src ? (
+                  <div className="relative w-full h-full">
+                    {/* Blurred placeholder */}
+                    {project.imageData.lqip && (
+                      <img 
+                        src={project.imageData.lqip}
+                        alt=""
+                        className="absolute inset-0 w-full h-full object-cover blur-sm"
+                        aria-hidden="true"
+                      />
+                    )}
+                    {/* Main image */}
+                    <img 
+                      src={project.imageData.src}
+                      alt={t(project.title)}
+                      className="relative w-full h-full object-contain transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
+                      decoding="async"
+                      style={{ opacity: project.imageData.lqip ? 0 : 1 }}
+                      onLoad={(e) => {
+                        if (project.imageData.lqip && e.target instanceof HTMLImageElement) e.target.style.opacity = '1';
+                      }}
+                    />
+                  </div>
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-[#ff8800]/20 to-[#ffc233]/20 flex items-center justify-center">
                     <div className="text-center">
@@ -142,14 +192,31 @@ const Projects = () => {
                   </DialogDescription>
                 </DialogHeader>
 
-                {/* Scrollable Image Container with decreased height */}
-                {selectedProject.fullImage && (
+                {/* Scrollable Image Container */}
+                {selectedProject.fullImageData?.src && (
                   <div className="w-full bg-black/50 rounded-2xl overflow-y-auto border border-white/10 custom-scrollbar max-h-[50vh] mb-6">
-                    <img
-                      src={selectedProject.fullImage}
-                      alt={t(selectedProject.title)}
-                      className="w-full object-contain"
-                    />
+                    <div className="relative w-full">
+                      {selectedProject.fullImageData.lqip && (
+                        <img 
+                          src={selectedProject.fullImageData.lqip}
+                          alt=""
+                          className="absolute inset-0 w-full object-cover blur-sm"
+                          aria-hidden="true"
+                        />
+                      )}
+                      <img
+                        src={selectedProject.fullImageData.src}
+                        alt={t(selectedProject.title)}
+                        className="relative w-full object-contain"
+                        loading="eager"
+                        style={{ opacity: selectedProject.fullImageData.lqip ? 0 : 1 }}
+                        onLoad={(e) => {
+                          if (selectedProject.fullImageData.lqip && e.target instanceof HTMLImageElement) {
+                            e.target.style.opacity = '1';
+                          }
+                        }}
+                      />
+                    </div>
                   </div>
                 )}
 
